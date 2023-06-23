@@ -1,0 +1,8 @@
+version: 1.0
+profile:
+  name: qodana.recommended
+exclude:
+  - name: UnusedSymbol
+  - name: RedundantWith
+    paths:
+      - exposed-core/src/main/kotlin/org/jetbrains/exposed/sql/SchemaUtils.kt
