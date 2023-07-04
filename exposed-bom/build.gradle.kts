@@ -5,6 +5,7 @@ plugins {
     `java-platform`
     `maven-publish`
     signing
+    id("org.jetbrains.kotlinx.kover")
 }
 
 group = "org.jetbrains.exposed"
@@ -28,6 +29,16 @@ dependencies {
             }
         }
     }
+    kover(project(":exposed-core"))
+    kover(project(":exposed-crypt"))
+    kover(project(":exposed-dao"))
+    kover(project(":exposed-java-time"))
+    kover(project(":exposed-jdbc"))
+    kover(project(":exposed-jodatime"))
+    kover(project(":exposed-kotlin-datetime"))
+    kover(project(":exposed-money"))
+    kover(project(":exposed-spring-boot-starter"))
+    kover(project(":exposed-tests"))
 }
 
 publishing {
@@ -40,4 +51,8 @@ publishing {
             signPublicationIfKeyPresent(project)
         }
     }
+}
+repositories {
+    mavenLocal()
+    mavenCentral()
 }

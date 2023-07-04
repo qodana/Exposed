@@ -7,16 +7,40 @@ plugins {
     id("io.github.gradle-nexus.publish-plugin") apply true
     id("io.gitlab.arturbosch.detekt")
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.2"
+    id("org.jetbrains.kotlinx.kover") version "0.7.2"
 }
 
 allprojects {
     apply(from = rootProject.file("buildScripts/gradle/checkstyle.gradle.kts"))
-
     if (this.name != "exposed-tests" && this.name != "exposed-bom" && this != rootProject) {
         apply(from = rootProject.file("buildScripts/gradle/publishing.gradle.kts"))
     }
 }
 
+//dependencies {
+//    val subProjectsForKover = setOf("spring-transaction")
+//    subprojects
+//        .filter { !subProjectsForKover.contains(it.name) }
+//        .forEach { kover(project(":${it.name}")) }
+//    subprojects.forEach { kover(project(":${it.name}")) }
+//    kover(project(":exposed-bom"))
+//    kover(project(":exposed-core"))
+//    kover(project(":exposed-crypt"))
+//    kover(project(":exposed-dao"))
+//    kover(project(":exposed-java-time"))
+//    kover(project(":exposed-jdbc"))
+//    kover(project(":exposed-jodatime"))
+//    kover(project(":exposed-kotlin-datetime"))
+//    kover(project(":exposed-money"))
+//
+    // }
+//koverReport {
+//    defaults {
+//        xml {
+//            onCheck = true
+//        }
+//    }
+//}
 apiValidation {
     ignoredProjects.addAll(listOf("exposed-tests", "exposed-bom"))
 }
