@@ -22,10 +22,8 @@ dependencies {
     kover(project(":exposed-bom"))
     kover(project(":exposed-crypt"))
     kover(project(":exposed-dao"))
-    kover(project(":exposed-java-time"))
     kover(project(":exposed-jdbc"))
     kover(project(":exposed-jodatime"))
-    kover(project(":exposed-kotlin-datetime"))
     kover(project(":exposed-money"))
     kover(project(":exposed-spring-boot-starter"))
 }
