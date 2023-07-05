@@ -6,7 +6,7 @@ plugins {
     kotlin("jvm") apply true
     kotlin("plugin.serialization") apply true
     id("org.jetbrains.kotlinx.kover")
-//    id("testWithDBs")
+    id("testWithDBs")
 }
 
 repositories {

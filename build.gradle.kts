@@ -17,30 +17,6 @@ allprojects {
     }
 }
 
-//dependencies {
-//    val subProjectsForKover = setOf("spring-transaction")
-//    subprojects
-//        .filter { !subProjectsForKover.contains(it.name) }
-//        .forEach { kover(project(":${it.name}")) }
-//    subprojects.forEach { kover(project(":${it.name}")) }
-//    kover(project(":exposed-bom"))
-//    kover(project(":exposed-core"))
-//    kover(project(":exposed-crypt"))
-//    kover(project(":exposed-dao"))
-//    kover(project(":exposed-java-time"))
-//    kover(project(":exposed-jdbc"))
-//    kover(project(":exposed-jodatime"))
-//    kover(project(":exposed-kotlin-datetime"))
-//    kover(project(":exposed-money"))
-//
-    // }
-//koverReport {
-//    defaults {
-//        xml {
-//            onCheck = true
-//        }
-//    }
-//}
 apiValidation {
     ignoredProjects.addAll(listOf("exposed-tests", "exposed-bom"))
 }
