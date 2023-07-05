@@ -3,6 +3,7 @@ import org.jetbrains.exposed.gradle.Versions
 plugins {
     kotlin("jvm") apply true
     id("testWithDBs")
+    id("org.jetbrains.kotlinx.kover")
 }
 
 repositories {

@@ -1,5 +1,6 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.report.ReportMergeTask
+import org.jetbrains.exposed.gradle.tasks.DBTestWithDockerCompose
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
@@ -7,13 +8,16 @@ plugins {
     id("io.github.gradle-nexus.publish-plugin") apply true
     id("io.gitlab.arturbosch.detekt")
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.2"
+    id("org.jetbrains.kotlinx.kover") version "0.7.2"
 }
 
 allprojects {
     apply(from = rootProject.file("buildScripts/gradle/checkstyle.gradle.kts"))
-
     if (this.name != "exposed-tests" && this.name != "exposed-bom" && this != rootProject) {
         apply(from = rootProject.file("buildScripts/gradle/publishing.gradle.kts"))
+    }
+    tasks.withType<DBTestWithDockerCompose>().configureEach {
+        ignoreFailures = true // ignore failures so that Gradle could finish generating coverage report
     }
 }
 

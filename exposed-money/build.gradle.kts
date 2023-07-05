@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") apply true
     id("testWithDBs")
+    id("org.jetbrains.kotlinx.kover")
 }
 
 repositories {

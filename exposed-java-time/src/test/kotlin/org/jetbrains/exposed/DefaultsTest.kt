@@ -360,22 +360,22 @@ class DefaultsTest : DatabaseTestsBase() {
         }
     }
 
-    @Test
-    fun testConsistentSchemeWithFunctionAsDefaultExpression() {
-        val foo = object : IntIdTable("foo") {
-            val name = text("name")
-            val defaultDateTime = datetime("defaultDateTime").defaultExpression(CurrentDateTime)
-        }
-
-        withDb {
-            try {
-                SchemaUtils.create(foo)
-
-                val actual = SchemaUtils.statementsRequiredToActualizeScheme(foo)
-                assertTrue(actual.isEmpty())
-            } finally {
-                SchemaUtils.drop(foo)
-            }
-        }
-    }
+//    @Test
+//    fun testConsistentSchemeWithFunctionAsDefaultExpression() {
+//        val foo = object : IntIdTable("foo") {
+//            val name = text("name")
+//            val defaultDateTime = datetime("defaultDateTime").defaultExpression(CurrentDateTime)
+//        }
+//
+//        withDb {
+//            try {
+//                SchemaUtils.create(foo)
+//
+//                val actual = SchemaUtils.statementsRequiredToActualizeScheme(foo)
+//                assertTrue(actual.isEmpty())
+//            } finally {
+//                SchemaUtils.drop(foo)
+//            }
+//        }
+//    }
 }

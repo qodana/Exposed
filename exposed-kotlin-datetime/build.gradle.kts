@@ -4,6 +4,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 plugins {
     kotlin("jvm") apply true
     id("testWithDBs")
+    id("org.jetbrains.kotlinx.kover")
 }
 
 repositories {

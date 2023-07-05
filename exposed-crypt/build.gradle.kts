@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") apply true
+    id("org.jetbrains.kotlinx.kover")
 }
 
 repositories {
