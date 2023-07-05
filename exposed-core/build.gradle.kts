@@ -28,5 +28,4 @@ dependencies {
     kover(project(":exposed-kotlin-datetime"))
     kover(project(":exposed-money"))
     kover(project(":exposed-spring-boot-starter"))
-    kover(project(":exposed-tests"))
 }
