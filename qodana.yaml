@@ -1,5 +1,5 @@
 version: 1.0
-linter: registry.jetbrains.team/p/sa/containers/qodana-jvm:2023.2-nightly
+linter: jetbrains/qodana-jvm:2023.2-eap
 profile:
   name: qodana.recommended
 exclude:
