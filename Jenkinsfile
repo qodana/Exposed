@@ -15,7 +15,7 @@ pipeline {
         stage('Qodana') {
             steps {
                 sh '''
-                qodana
+                QODANA_BRANCH=${GIT_BRANCH} qodana
                 '''
             }
         }
