@@ -1,5 +1,5 @@
 version: 1.0
-linter: jetbrains/qodana-jvm:2023.2
+linter: jetbrains/qodana-jvm:latest
 profile:
   name: qodana.recommended
 exclude:
@@ -7,6 +7,3 @@ exclude:
   - name: RedundantWith
     paths:
       - exposed-core/src/main/kotlin/org/jetbrains/exposed/sql/SchemaUtils.kt
-bootstrap: |
-    mkdir -p /data/coverage
-    mv exposed-core/build/reports/kover/report.xml /data/coverage
